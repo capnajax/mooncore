@@ -62,3 +62,8 @@ typings/
 
 # Cache used by TypeScript's incremental build
 *.tsbuildinfo
+
+#
+# Project-specific ignores
+#
+secrets.yaml

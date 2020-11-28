@@ -11,8 +11,9 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "lb-tsc",
-    "build:watch": "lb-tsc --watch",
+    "build": "npm run distdir ; lb-tsc",
+    "build:watch": "npm run distdir ; lb-tsc --watch",
+    "distdir": "mkdir -p dist/controllers ; cp src/controllers/*.yaml dist/controllers",
     "lint": "npm run prettier:check && npm run eslint",
     "lint:fix": "npm run eslint:fix && npm run prettier:fix",
     "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
@@ -53,6 +54,9 @@
     "@loopback/rest": "^3.2.1",
     "@loopback/rest-explorer": "^2.0.4",
     "@loopback/service-proxy": "^2.0.4",
+    "@types/lodash": "^4.14.149",
+    "@types/yamljs": "^0.2.30",
+    "axios": "^0.19.2",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
